@@ -9,7 +9,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/phant
+ExecStart=/bin/bash /usr/bin/phant-env.sh
 ExecReload=/bin/kill -1 -- $MAINPID
 ExecStop=/bin/kill -- $MAINPID
 TimeoutStopSec=5
