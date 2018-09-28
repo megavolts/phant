@@ -85,6 +85,19 @@ Type 'help' for a list of available commands
 
 phant>
 ```
+## Phant service
+Copy `phant.service` to `/etc/systemd/system/phant.service`. Start and enable the service with
+```
+systemctl start phant
+systemctl enable phant
+```
+
+## Change port:
+To change port number, copy the env file `.env` to `/usr/lib/node_modules/phant/.env` and edi.
+```
+PHANT_PORT=8000
+PHANT_TELNET_PORT=8081
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
