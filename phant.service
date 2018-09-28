@@ -1,7 +1,6 @@
+  GNU nano 2.7.4                                                                                         File: /etc/systemd/system/phant.service                                                                                         Modified  
+
 # /etc/systemd/system/phant.service
-# start with systemctl start phant
-# stop with systemctl stop phant
-# enable with systemctl enable phant
 
 [Unit]
 Description=Phant service
@@ -9,7 +8,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash /usr/bin/phant-env.sh
+WorkingDirectory=/usr/lib/node_modules/phant/
+ExecStart=/usr/bin/phant
 ExecReload=/bin/kill -1 -- $MAINPID
 ExecStop=/bin/kill -- $MAINPID
 TimeoutStopSec=5
