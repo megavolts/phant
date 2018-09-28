@@ -1,0 +1,19 @@
+# /etc/systemd/system/phant.service
+# start with systemctl start phant
+# stop with systemctl stop phant
+# enable with systemctl enable phant
+
+[Unit]
+Description=Phant service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/phant
+ExecReload=/bin/kill -1 -- $MAINPID
+ExecStop=/bin/kill -- $MAINPID
+TimeoutStopSec=5
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
